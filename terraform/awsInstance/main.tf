@@ -16,7 +16,7 @@ resource "null_resource" "sample_resource" {
 
     triggers = {
 
-        abc = aws_instance.sample.*.private_ip
+        abc = aws_instance.sample.*.private_ip[0]
     }
 
   provisioner "remote-exec" {
