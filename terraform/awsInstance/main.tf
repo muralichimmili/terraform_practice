@@ -28,7 +28,9 @@ resource "null_resource" "sample_resource" {
     }
     inline = [
       "echo hello",
-      "echo hai h r u?"
+      "echo hai h r u?" ,
+      "pwd" ,
+      "cat /etc/passwd"
     ]
 
   }
