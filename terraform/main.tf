@@ -20,8 +20,6 @@ variable "instance_type" {
   type=string
 }
 
-variable "env" {
-}
 variable "list_servername" {
   type = list(string)
 }
