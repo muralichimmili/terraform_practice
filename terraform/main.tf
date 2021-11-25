@@ -21,7 +21,6 @@ variable "instance_type" {
 }
 
 variable "env" {
-  type=string
 }
 variable "list_servername" {
   type = list(string)
