@@ -36,5 +36,5 @@ module "msecuritygroup" {
 
 }
 output "public_ip" {
-  value = " server1 :: ${module.mawsinstance.ip[0]} , server2 :: ${module.mawsinstance.ip[1]} , server3 :: ${module.mawsinstance.ip[2]}"
+  value = " server1 :: ${module.mawsinstance.ip}"
 }
