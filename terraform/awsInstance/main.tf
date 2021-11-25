@@ -12,6 +12,29 @@ resource "aws_instance" "sample" {
 
 }
 
+resource "null_resource" "sample_resource" {
+
+    triggers = {
+
+        abc = aws_instance.sample.*.private_ip
+    }
+
+  provisioner "remote-exec" {
+    connection {
+      host = aws_instance.sample.*.public_ip[0]
+      user = "centos"
+      password = "DevOps321"
+    }
+
+    inline = [
+      "echo hello",
+      "echp hai h r u?"
+    ]
+
+  }
+
+}
+
 locals {
     envname = " dev server instance"
 }
