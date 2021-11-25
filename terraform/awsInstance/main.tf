@@ -20,15 +20,15 @@ resource "null_resource" "sample_resource" {
     }
 
   provisioner "remote-exec" {
+
     connection {
       host = aws_instance.sample.*.public_ip[0]
       user = "centos"
       password = "DevOps321"
     }
-
     inline = [
       "echo hello",
-      "echp hai h r u?"
+      "echo hai h r u?"
     ]
 
   }
