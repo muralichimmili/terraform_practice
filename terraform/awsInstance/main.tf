@@ -1,5 +1,5 @@
 resource "aws_instance" "sample" {
-  count         = length(var.name)
+  count         = var.name == "dev-env"? 1 : 0
   ami           = "ami-0855cab4944392d0a"
   instance_type = var.instype
   vpc_security_group_ids = [var.secgrpid]
