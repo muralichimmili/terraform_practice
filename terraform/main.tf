@@ -31,8 +31,8 @@ module "mawsinstance" {
   source   = "./awsInstance/"
   secgrpid = module.msecuritygroup.osecuritygrpid
   instype  = var.instance_type
- # name    = var.list_servername
-   env     = var.env
+   name    = var.list_servername
+   #env     = var.env
 
 }
 module "msecuritygroup" {

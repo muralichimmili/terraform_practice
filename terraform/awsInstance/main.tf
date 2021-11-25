@@ -1,12 +1,12 @@
 resource "aws_instance" "sample" {
-  count         = var.env == "dev"? 1 : 0
+  count         = len(var.name)
   ami           = "ami-0855cab4944392d0a"
   instance_type = var.instype
   vpc_security_group_ids = [var.secgrpid]
 
   tags = {
-    # Name = element(var.name,count.index)
-    Name = "${local.envname}"
+    Name = element(var.name,count.index)
+   # Name = "${local.envname}"
   }
 
 }
@@ -21,6 +21,8 @@ variable "secgrpid" {
 }
 variable "instype" {
 }
+
+variable "name" {}
 
 output "ip" {
 
