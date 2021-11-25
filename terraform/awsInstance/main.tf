@@ -6,13 +6,13 @@ resource "aws_instance" "sample" {
 
   tags = {
     # Name = element(var.name,count.index)
-    Name = var.env + "${local.envname}"
+    Name = "${local.envname}"
   }
 
 }
 
 locals {
-    envname = "server instance"
+    envname = " dev server instance"
 }
 
 variable "env" {
@@ -21,8 +21,7 @@ variable "secgrpid" {
 }
 variable "instype" {
 }
-variable "name" {
-}
+
 output "ip" {
 
   value = "${aws_instance.sample.*.public_ip}"
