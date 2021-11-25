@@ -1,6 +1,7 @@
 resource "aws_instance" "sample" {
   count         = length(var.name)
-  ami           = "ami-0855cab4944392d0a"
+ # ami           = "ami-0855cab4944392d0a"
+   ami          = data.aws_ami.aws_ins.id
   instance_type = var.instype
   vpc_security_group_ids = [var.secgrpid]
 
@@ -15,7 +16,13 @@ locals {
     envname = " dev server instance"
 }
 
+data "aws_ami" "aws_ins" {
 
+  most_recent      = true
+  name_regex       = "Centos*"
+  owners           = ["973714476881"]
+
+}
 variable "secgrpid" {
 }
 variable "instype" {
