@@ -1,5 +1,5 @@
 resource "aws_instance" "sample" {
-  count         = var.name == "dev-env"? 1 : 0
+  count         = var.env == "dev"? 1 : 0
   ami           = "ami-0855cab4944392d0a"
   instance_type = var.instype
   vpc_security_group_ids = [var.secgrpid]
@@ -8,6 +8,9 @@ resource "aws_instance" "sample" {
     Name = element(var.name,count.index)
   }
 
+}
+
+variable "env" {
 }
 variable "secgrpid" {
 }

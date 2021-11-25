@@ -19,6 +19,10 @@ provider "aws" {
 variable "instance_type" {
   type=string
 }
+
+variable "env" {
+  type=string
+}
 variable "list_servername" {
   type = list(string)
 }
@@ -27,7 +31,8 @@ module "mawsinstance" {
   source   = "./awsInstance/"
   secgrpid = module.msecuritygroup.osecuritygrpid
   instype  = var.instance_type
-  name     = var.list_servername
+ # name    = var.list_servername
+   env     = var.env
 
 }
 module "msecuritygroup" {
