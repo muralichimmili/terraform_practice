@@ -5,9 +5,14 @@ resource "aws_instance" "sample" {
   vpc_security_group_ids = [var.secgrpid]
 
   tags = {
-    Name = element(var.name,count.index)
+    # Name = element(var.name,count.index)
+    Name = var.env + "${local.envname}"
   }
 
+}
+
+locals {
+    envname = "server instance"
 }
 
 variable "env" {
