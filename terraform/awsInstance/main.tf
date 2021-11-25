@@ -15,8 +15,7 @@ locals {
     envname = " dev server instance"
 }
 
-variable "env" {
-}
+
 variable "secgrpid" {
 }
 variable "instype" {
