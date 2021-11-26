@@ -1,9 +1,10 @@
-#! /bin/bash
 
-A=10
-B=20
-V_PERSON ="murali"
-V_ACTION ="sleep"
-echo "values for a and b are : $A $B"
-echo "username is : $V_PERSON"
-echo "user is : $V_ACTION"
+#! /bin/bash
+a=10
+b=20
+COURSE="linux"
+ACTION="SLEEP" e
+cho "Values of a and b are: $a and $b"
+echo "My Course is: ${COURSE}"
+echo "My Favourite Action: $ACTIONING"
+echo "My Favourite Action: ${ACTION}ING"
