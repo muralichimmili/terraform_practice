@@ -1,4 +1,6 @@
 #! /bin/bash
 
-read -p "enter filename :"filename
+read -p "enter filename :" filename
+echo "............................................................."
 cat $filename
+echo ".............................................................."
