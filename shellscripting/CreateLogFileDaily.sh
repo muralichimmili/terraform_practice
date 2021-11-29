@@ -8,7 +8,7 @@ filename=$(date +%d_%m_%Y_%H_%M_%S).log
    echo "$dir already exist in the system"
  fi
 
-  if[ ! -e $filename ]; then
+  if [ ! -e $filename ]; then
        touch ${filename}
        echo "${filename} created successfully"
      else
