@@ -2,11 +2,11 @@
 
 sudo apt update
 java -version
-if [ echo $? -ne 0] ; then
+if [ $? -ne 0]; then
 
   sudo apt install -y default-jre
 
-  if [ echo $? -eq 0] ; then
+  if [ $? -eq 0]; then
 
           echo java installed sucessfully
   else
