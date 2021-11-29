@@ -1,14 +1,14 @@
 #! /bin/bash
 dir=$(date +%d_%m_%Y)
 file=$(date +%d_%m_%Y_%H_%M_%S)
- if [!(-e $dir)];then
+ if [ ! -e $dir ]; then
     mkdir $dir
     echo "Created Directory successfully"
  else
    echo "$dir already exist in the system"
  fi
 
-  if[!(-e ${file}.log)];then
+  if[ ! -e ${file}.log ]; then
        touch ${file}.log
        echo "${file}.log created successfully"
      else
