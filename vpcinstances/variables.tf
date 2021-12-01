@@ -17,7 +17,7 @@ variable "private_subnet_cidr" {
 }
 variable "ami" {
   description = "Amazon Linux AMI"
-  default = ""
+  default = "ami-0108d6a82a783b352"
 }
 variable "key_path" {
   description = "SSH public key path"
