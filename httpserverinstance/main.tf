@@ -4,6 +4,11 @@ terraform {
     key    = "tfnewstate/terraform.tfstate"
     region = "us-east-1"
   }
+  backend "s3" {
+    bucket = "keypair"
+    key    = "terraform-key-pair.pem"
+    region = "us-east-1"
+  }
   required_providers {
     aws = {
       source  = "hashicorp/aws"
