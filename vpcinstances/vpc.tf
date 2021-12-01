@@ -67,7 +67,7 @@ resource "aws_security_group" "sgroupweb" {
   }
   ingress {
     from_port = 80
-    protocol = "tcp"
+    protocol = "http"
     to_port = 80
     cidr_blocks = ["0.0.0.0/0"]
   }
