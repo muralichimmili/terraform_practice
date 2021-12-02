@@ -34,8 +34,12 @@ resource "aws_instance" "sample" {
     inline = [
       "echo hello world",
       "pwd",
+      "sudo yum install httpd -y",
       "sudo su",
-      "yum install httpd -y"
+      "cd /var/www/html",
+      "echo hi terraform is doing automation > index.html",
+      "service start httpd",
+      "chkconfig httpd on"
     ]
   }
   tags = {
