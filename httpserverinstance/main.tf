@@ -32,6 +32,7 @@ resource "aws_instance" "sample" {
   }
   provisioner "remote-exec" {
     inline = [
+      "echo hello world",
       "sudo su",
       "yum update -y",
       "yum install httpd -y",
