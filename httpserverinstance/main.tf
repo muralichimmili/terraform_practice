@@ -35,14 +35,7 @@ resource "aws_instance" "sample" {
       "echo hello world",
       "pwd",
       "sudo su",
-      "pwd",
-      "yum update -y",
-      "yum install httpd -y",
-      "cd /var/www/html",
-      "echo hello from webserver vpc > index.html",
-      "service start httpd",
-      "chkconfig httpd on",
-      "echo hello world"
+      "yum install httpd -y"
     ]
   }
   tags = {
