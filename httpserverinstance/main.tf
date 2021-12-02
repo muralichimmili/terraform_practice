@@ -37,7 +37,7 @@ resource "aws_instance" "sample" {
       "sudo yum update -y",
       "sudo yum install httpd -y",
       "echo hi terraform is doing automation > index.html",
-      "sudo mv /home/ec2-user/index.html /var/www/html/",
+      "sudo cp /home/ec2-user/index.html /var/www/html/",
       "sudo service start httpd",
       "sudo chkconfig httpd on"
     ]
