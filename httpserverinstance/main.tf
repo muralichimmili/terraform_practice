@@ -34,7 +34,7 @@ resource "aws_instance" "sample" {
     inline = [
       "echo hello world",
       "pwd",
-      "sudo yum update -y"
+      "sudo yum update -y",
       "sudo yum install httpd -y",
       "echo hi terraform is doing automation > index.html",
       "sudo mv /home/ec2-user/index.html /var/www/html/",
