@@ -26,7 +26,7 @@ resource "aws_instance" "sample" {
 
   connection {
     type     = "ssh"
-    user     = "root"
+    user     = "ec2-user"
     private_key = "${tls_private_key.dev_key.private_key_pem}"
     host     = "${aws_instance.sample.public_ip}"
   }
@@ -34,11 +34,12 @@ resource "aws_instance" "sample" {
     inline = [
       "echo hello world",
       "pwd",
-      "yum install httpd -y",
-      "cd /var/www/html",
+      "sudo yum update -y"
+      "sudo yum install httpd -y",
       "echo hi terraform is doing automation > index.html",
-      "service start httpd",
-      "chkconfig httpd on"
+      "sudo mv /home/ec2-user/index.html /var/www/html/",
+      "sudo service start httpd",
+      "sudo chkconfig httpd on"
     ]
   }
   tags = {
