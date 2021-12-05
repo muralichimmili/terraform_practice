@@ -36,4 +36,4 @@ ansible [inventory|file|dir] -m modulename -a "arguments"
 
   Installing httpd server on remote machines
 
-  ansible -i inventory -m ansible.builtin.yum -a "name=httpd state=present"
+  ansible all -i inventory -m ansible.builtin.yum -a "name=httpd state=present" --key-file=keyfile.pem -u=ec2-user -b
