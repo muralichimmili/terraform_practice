@@ -1,6 +1,7 @@
 ---
-- hosts: web
-  become: true
+- name: Update web servers
+  hosts: web
+  remote_user: root
 
   tasks:
   - name: install httpd on servers
@@ -15,4 +16,3 @@
     ansible.builtin.copy:
         dest: /var/www/html/index.html
         src: /opt/index.html
--
