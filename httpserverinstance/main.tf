@@ -50,6 +50,7 @@ resource "aws_instance" "sample" {
   }
 
 
+
 resource "aws_security_group" "allow_sample" {
   name        = "allow_sample"
   description = "Allow sample ibnound traffic"
@@ -59,6 +60,7 @@ resource "aws_security_group" "allow_sample" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
+    self        = null
     cidr_blocks = ["0.0.0.0/0"]
   }
 
@@ -68,6 +70,7 @@ resource "aws_security_group" "allow_sample" {
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
+    self        = null
     cidr_blocks = ["0.0.0.0/0"]
   }
 
@@ -77,6 +80,7 @@ resource "aws_security_group" "allow_sample" {
     to_port     = 0
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
+
   }
 
 

@@ -1,0 +1,35 @@
+ssh -i "allowall.pem" centos@ec2-18-214-44-92.compute-1.amazonaws.com
+
+ansible [inventory|file|dir] -m modulename -a "arguments"
+  -a parameters
+  -m module
+  -u username
+
+    Creating files/Dir's  using file/ansible.builtin.file  module ::
+
+    Examples::
+           ls -lrt /opt/
+          ansible [127.0.0.1 | localhost] -m ansible.builtin.file -a "dest=/opt/test.txt state=touch"
+          ansible 127.0.0.1 -m file -a "dest=/opt/src state=directory"
+           ansible 127.0.0.1 -m file -a "dest=/opt/test1.txt owner=ec2-user state=touch"
+           ansible 127.0.0.1 -m file -a "dest=/opt/test1.txt owner=ec2-user mode=755 state=file"
+
+    Deleting files/Dirs's
+     ansible [127.0.0.1 | localhost] -m ansible.builtin.file -a "dest=/opt/test.txt state=absent"
+     ansible 127.0.0.1 -m file -a "dest=/opt/src state=absent"
+     ansible [127.0.0.1 | localhost] -m ansible.builtin.file -a "dest=/opt/test1.txt state=absent"
+
+ Install and uninstall webserver httpd using yum/ansible.builtin.yum Module on localhost ::
+
+ Examples::
+
+    ansible 127.0.0.1 -m ansible.builtin.yum -a "name=httpd state=present"
+    ansible 127.0.0.1 -m ansible.builtin.yum -a "name=httpd state=absent"
+
+  to start the service
+
+    ansible 127.0.0.1 -m ansible.builtin.service -a "name=httpd state=started"
+
+  to stop the service
+
+      ansible 127.0.0.1 -m ansible.builtin.service -a "name=httpd state=stopped"
