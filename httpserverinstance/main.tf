@@ -41,6 +41,7 @@ resource "aws_instance" "sample" {
       "sudo service start httpd",
       "sudo chkconfig httpd on"
     ]
+    command = ["ansible ${aws_instance.sample.public_ip} -m ansible.builtin.yum -a name=httpd state=present --key-file=${aws_key_pair.generated_key.key_name} -u=ec2-user -b"]
   }
   tags = {
     Name = "webserver"
