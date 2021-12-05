@@ -4,9 +4,9 @@
 
   tasks:
   - name: install httpd on servers
-    ansibile.builtin.yum:
-        name=httpd
-        state=present
+    ansible.builtin.yum:
+      name=httpd
+      state=present
   - name: start the http service
     ansible.builtin.service:
         name=httpd
@@ -15,4 +15,4 @@
     ansible.builtin.copy:
         dest: /var/www/html/index.html
         src: /opt/index.html
-...
+-
