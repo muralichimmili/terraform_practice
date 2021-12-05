@@ -33,3 +33,7 @@ ansible [inventory|file|dir] -m modulename -a "arguments"
   to stop the service
 
       ansible 127.0.0.1 -m ansible.builtin.service -a "name=httpd state=stopped"
+
+  Installing httpd server on remote machines
+
+  ansible -i inventory -m ansible.builtin.yum -a "name=httpd state=present"
