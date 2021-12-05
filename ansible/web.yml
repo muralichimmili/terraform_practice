@@ -16,3 +16,21 @@
     ansible.builtin.copy:
         dest: /var/www/html/index.html
         src: /opt/index.html
+
+- name: Update db servers
+  hosts: db
+  remote_user: root
+
+  tasks:
+  - name: install httpd on servers
+    ansible.builtin.yum:
+      name=httpd
+      state=present
+  - name: start the http service
+    ansible.builtin.service:
+        name=httpd
+        state=started
+  - name: copy the index html to destination
+    ansible.builtin.copy:
+        dest: /var/www/html/index.html
+        src: /opt/index.html
