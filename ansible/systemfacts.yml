@@ -1,0 +1,9 @@
+
+---
+ - name: hosts to execute
+   hosts: all
+   become: true
+   tasks:
+     - name: Show facts available on the system
+     ansible.builtin.debug:
+       var: ansible_facts
