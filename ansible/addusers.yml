@@ -2,7 +2,8 @@
 - name: host machine
   hosts: all
   become: true
-- name: Add several users
+  tasks:
+  - name: Add several users
   ansible.builtin.user:
     name: "{{ item }}"
     state: present
