@@ -2,13 +2,13 @@
 - name: host machine
   hosts: all
   become: true
+  vars_files:
+  - usernames
   tasks:
   - name: Add several users
     ansible.builtin.user:
      name: "{{ item }}"
      state: present
      groups: "wheel"
-    loop:
-     - testuser1
-     - testuser2
+    loop: "{(users)}"
 ...
