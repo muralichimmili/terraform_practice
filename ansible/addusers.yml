@@ -4,11 +4,11 @@
   become: true
   tasks:
   - name: Add several users
-  ansible.builtin.user:
-    name: "{{ item }}"
-    state: present
-    groups: "wheel"
-  loop:
+    ansible.builtin.user:
+     name: "{{ item }}"
+     state: present
+     groups: "wheel"
+    loop:
      - testuser1
      - testuser2
 ...
