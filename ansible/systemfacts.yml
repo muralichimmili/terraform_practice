@@ -5,5 +5,5 @@
    become: true
    tasks:
      - name: Show facts available on the system
-     ansible.builtin.debug:
+       ansible.builtin.debug:
        var: ansible_facts
