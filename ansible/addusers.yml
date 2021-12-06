@@ -10,5 +10,5 @@
      name: "{{ item }}"
      state: present
      groups: "wheel"
-    loop: "{(users)}"
+    loop: "{{ users }}"
 ...
