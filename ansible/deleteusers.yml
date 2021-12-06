@@ -1,0 +1,14 @@
+---
+- name: host machine
+  hosts: all
+  become: true
+  vars_files:
+    - usernames
+  tasks:
+    - name: Add several users
+      ansible.builtin.user:
+        name: "{{ item }}"
+        state: absent
+        groups: "wheel"
+      loop: "{{ users }}"
+...
