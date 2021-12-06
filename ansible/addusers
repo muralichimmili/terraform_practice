@@ -1,6 +1,7 @@
+---
 - name: host machine
-   hosts: 127.0.0.1
-   become: true
+  hosts: all
+  become: true
 - name: Add several users
   ansible.builtin.user:
     name: "{{ item }}"
@@ -9,3 +10,4 @@
   loop:
      - testuser1
      - testuser2
+...
