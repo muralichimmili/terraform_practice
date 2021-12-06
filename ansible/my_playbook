@@ -1,0 +1,4 @@
+- import_playbook: "{{ import_from_extra_var }}"
+- import_playbook: "{{ import_from_vars }}"
+  vars:
+    import_from_vars: deleteusers.yml
