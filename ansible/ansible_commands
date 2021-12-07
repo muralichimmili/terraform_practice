@@ -37,3 +37,13 @@ ansible [inventory|file|dir] -m modulename -a "arguments"
   Installing httpd server on remote machines
 
   ansible all -i inventory -m ansible.builtin.yum -a "name=httpd state=present" --key-file=keyfile.pem -u=ec2-user -b
+
+****************************************************************************************************************************************
+
+install and run service of httpd using playbook
+
+ansible -i inventory web.yml -u=username --key-file=keyfile
+
+************************************************************************************************************************
+using loop in ansible playbook::
+
