@@ -1,4 +1,4 @@
-- hosts: web1
+- hosts: ubuntu
   become: true
 
   roles:
