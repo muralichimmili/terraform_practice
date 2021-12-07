@@ -30,18 +30,19 @@ resource "aws_instance" "sample" {
     private_key = "${tls_private_key.dev_key.private_key_pem}"
     host     = "${aws_instance.sample.public_ip}"
   }
-  provisioner "remote-exec" {
+  provisioner "local-exec" {
     inline = [
-      "echo hello world",
+   /*   "echo hello world",
       "pwd",
       "sudo yum update -y",
       "sudo yum install httpd -y",
       "echo hi terraform is doing automation > index.html",
       "sudo cp /home/ec2-user/index.html /var/www/html/",
       "sudo service start httpd",
-      "sudo chkconfig httpd on"
+      "sudo chkconfig httpd on",*/
+      "yum install "
+    "ansible ${aws_instance.sample.public_ip} -m ansible.builtin.yum -a name=httpd state=present --key-file=${aws_key_pair.generated_key.key_name} -u=ec2-user -b"]
     ]
-    command = ["ansible ${aws_instance.sample.public_ip} -m ansible.builtin.yum -a name=httpd state=present --key-file=${aws_key_pair.generated_key.key_name} -u=ec2-user -b"]
   }
   tags = {
     Name = "webserver"
