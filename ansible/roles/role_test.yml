@@ -2,6 +2,6 @@
   become: true
 
   vars_files:
-    - default.yml
+    - /vars/default.yml
   roles:
     - common
