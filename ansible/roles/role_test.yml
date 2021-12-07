@@ -1,5 +1,7 @@
 - hosts: ubuntu
   become: true
 
+  vars:
+    - default.yml
   roles:
     - common
