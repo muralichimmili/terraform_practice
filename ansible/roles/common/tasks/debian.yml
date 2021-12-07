@@ -37,13 +37,13 @@
     port: "{{ http_port }}"
     proto: tcp
 
-handlers:
-  - name: Reload Apache
-    service:
-      name: apache2
-      state: reloaded
-
-  - name: Restart Apache
-    service:
-      name: apache2
-      state: restarted
+#handlers:
+#- name: Reload Apache
+#    service:
+#      name: apache2
+#      state: reloaded
+#
+#  - name: Restart Apache
+#    service:
+#      name: apache2
+#      state: restarted
