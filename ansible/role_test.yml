@@ -2,4 +2,4 @@
   become: true
 
   roles:
-  - role: '/ansible/roles/main.yml'
+    - role: '/ansible/roles/main.yml'
