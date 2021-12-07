@@ -2,4 +2,4 @@
   become: true
 
   roles:
-    - role: '/terraform_practice/ansible/roles/common/main.yml'
+    - role: './terraform_practice/ansible/roles/common/main.yml'
