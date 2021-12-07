@@ -1,4 +1,4 @@
-- hosts: redhat
+- hosts: web1
   become: true
 
   roles:
