@@ -1,7 +1,8 @@
 - hosts: ubuntu
   become: true
 
-  vars_files:
-    - /vars/default.yml
+  vars:
+    dir: /vars
+
   roles:
     - common
