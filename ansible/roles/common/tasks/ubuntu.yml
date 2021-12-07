@@ -1,0 +1,12 @@
+- name: Install web server
+  ansible.builtin.apt:
+    name: "apache2"
+    state: present
+- name: copy the index html to destination
+  ansible.builtin.copy:
+    dest: /var/www/html/index.html
+    src: /opt/index.html
+- name: start the http service
+  ansible.builtin.service:
+    name: "httpd"
+    state: started
