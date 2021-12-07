@@ -1,4 +1,4 @@
-app_user: "sammy"
+app_user: "ubuntu"
 http_host: "your_domain"
 http_conf: "your_domain.conf"
 http_port: "80"
