@@ -2,12 +2,13 @@
 #  import_tasks: redhat.yml
 #  when: ansible_facts['os_family']|lower == 'redhat'
 
-- name: Include the common role
-  include_role:
-    name: common
+
 
 - name: Install the correct web server for Debian
   import_tasks: debian.yml
+  - name: Include the common role
+    include_role:
+      name: common
   when: ansible_facts['os_family']|lower == 'debian'
 
 
