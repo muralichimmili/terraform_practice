@@ -1,19 +1,16 @@
-#- name: Install the correct web server for RHEL
-#  import_tasks: redhat.yml
-#  when: ansible_facts['os_family']|lower == 'redhat'
+- name: Install the correct web server for RHEL
+  import_tasks: redhat.yml
+  when: ansible_facts['os_family']|lower == 'redhat'
 
 
 
 - name: Install the correct web server for Debian
   import_tasks: debian.yml
-- name: Include the common role
-  include_role:
-   name: common
   when: ansible_facts['os_family']|lower == 'debian'
 
 
 
-#
-#- name: Install the correct web server for centos
-#  import_tasks: centos.yml
-#  when: ansible_facts['os_family']|lower == 'centos'
+
+- name: Install the correct web server for centos
+  import_tasks: centos.yml
+  when: ansible_facts['os_family']|lower == 'centos'
