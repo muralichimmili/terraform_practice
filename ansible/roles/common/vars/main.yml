@@ -1,5 +1,5 @@
 app_user: "ubuntu"
-http_host: "your_domain"
+http_host: "apache server"
 http_conf: "your_domain.conf"
 http_port: "80"
 disable_default: true
