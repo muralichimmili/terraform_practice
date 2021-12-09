@@ -40,13 +40,13 @@
         remote_src: yes
         extra_opts: [--strip-components=1]
 
-    - name: Change ownership
+    - name: change file ownership
       ansible.builin.file:
         path: /opt/tomcat
         owner: tomcat
         group: tomcat
-      //  mode: "u+rwx,g+rx,o=rx"
-        mode: 0755
+        mode: "u+rwx,g+rx,o=rx"
+        #mode: 0755
         recurse: yes
         state: directory
 
