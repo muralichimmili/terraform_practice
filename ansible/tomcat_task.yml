@@ -41,7 +41,7 @@
         extra_opts: [--strip-components=1]
 
     - name: change file ownership
-      ansible.builin.file:
+      ansible.builtin.file:
         path: /opt/tomcat
         owner: tomcat
         group: tomcat
