@@ -35,6 +35,7 @@ tags = {
 }
 
 resource "aws_ec2_tag" "ec2tag" {
+  count = length(var.components)
   key = "Name"
   resource_id = element(aws_spot_instance_request.spotinstance.*.spot_instance_id,count.index)
   value = element(var.components,count.index)
