@@ -28,7 +28,7 @@ variable "components" {
 resource "aws_spot_instance_request" "spotinstance" {
   count = length(var.components)
   ami           = data.aws_ami.image.id
-  instance_type = "t2.micro"
+  instance_type = "t3.small"
   vpc_security_group_ids = ["sg-05bf9a59ca4476ee1"]
   wait_for_fulfillment   = true
 
@@ -53,9 +53,9 @@ resource "null_resource" "remote_exec" {
     password = "DevOps321"
 
     inline = [
-      "yum install python3-pip -y",
-      "pip3 install pip --upgrade",
-      "pip3 install ansible",
+      "sudo yum install python3-pip -y",
+      "sudo pip3 install pip --upgrade",
+      "sudo pip3 install ansible",
       "ansible-pull -U https://github.com/muralichimmili/ansible roboshop-pull.yml -e COMPONENT=${element(var.components,count.index)} -e ENV=dev"
     ]
 
