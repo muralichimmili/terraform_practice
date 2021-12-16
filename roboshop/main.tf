@@ -20,9 +20,9 @@ data "aws_ami" "image" {
 }
 
 variable "components" {
- # default = ["mongodb","catalogue","user","cart","redis","shipping","mysql","rabbitmq","payment","frontend"]
+ default = ["mongodb","catalogue","user","cart","redis","shipping","mysql","rabbitmq","payment","frontend"]
 
-  default = ["mongodb","catalogue","frontend"]
+  # default = ["mongodb","catalogue","frontend"]
 }
 
 resource "aws_spot_instance_request" "spotinstance" {
