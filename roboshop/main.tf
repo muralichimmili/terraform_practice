@@ -51,7 +51,7 @@ resource "null_resource" "remote_exec" {
     host = element(aws_spot_instance_request.spotinstance.*.private_ip, count.index)
     user = "centos"
     password = "DevOps321"
-
+  }
     inline = [
       "sudo yum install python3-pip -y",
       "sudo pip3 install pip --upgrade",
@@ -60,7 +60,7 @@ resource "null_resource" "remote_exec" {
     ]
 
 
-  }
+
 
 }
 
