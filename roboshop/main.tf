@@ -15,7 +15,7 @@ provider "aws" {
 
 data "aws_ami" "image" {
   most_recent = true
-  name_regex = "^cent*"
+  name_regex = "^Cent*"
   owners = ["973714476881"]
 }
 
