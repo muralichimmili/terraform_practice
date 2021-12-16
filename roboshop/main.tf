@@ -47,11 +47,13 @@ resource "aws_ec2_tag" "ec2tag" {
 resource "null_resource" "remote_exec" {
   depends_on = [aws_route53_record.records]
   count      = length(var.components)
-  connection {
-    host = element(aws_spot_instance_request.spotinstance.*.private_ip, count.index)
-    user = "centos"
-    password = "DevOps321"
-  }
+  provisioner "remote-exec" {
+    connection {
+      host = element(aws_spot_instance_request.spotinstance.*.private_ip, count.index)
+      user = "centos"
+      password = "DevOps321"
+    }
+
     inline = [
       "sudo yum install python3-pip -y",
       "sudo pip3 install pip --upgrade",
@@ -60,6 +62,8 @@ resource "null_resource" "remote_exec" {
     ]
 
 
+
+  }
 
 
 }
