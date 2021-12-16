@@ -27,7 +27,7 @@ resource "aws_spot_instance_request" "spotinstance" {
   count = length(var.components)
   ami           = data.aws_ami.aws_ami.id
   instance_type = "t2.micro"
-  vpc_security_group_ids = [sg-05bf9a59ca4476ee1]
+  vpc_security_group_ids = ["sg-05bf9a59ca4476ee1"]
 
 tags = {
   Name = element(var.components,count.index)
