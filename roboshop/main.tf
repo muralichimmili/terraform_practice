@@ -13,7 +13,7 @@ provider "aws" {
 }
 
 
-data "aws_ami" "aws_ami" {
+data "aws_ami" "image" {
   most_recent = true
   name_regex = "^cent*"
   owners = ["973714476881"]
@@ -25,7 +25,7 @@ variable "components" {
 
 resource "aws_spot_instance_request" "spotinstance" {
   count = length(var.components)
-  ami           = data.aws_ami.aws_ami.id
+  ami           = data.aws_ami.image.id
   instance_type = "t2.micro"
   vpc_security_group_ids = ["sg-05bf9a59ca4476ee1"]
 
